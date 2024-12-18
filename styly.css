@@ -1,0 +1,195 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    transition: background 0.5s ease;
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 40px;
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Stylizace ikon */
+svg {
+    vertical-align: middle;
+    margin-right: 10px;
+    width: 24px;
+    height: 24px;
+    stroke: currentColor;
+}
+
+/* Barevné varianty podle počasí */
+body.sunny svg { color: #ffd700; }
+body.rainy svg { color: #4a90e2; }
+body.snowy svg { color: #a1a1a1; }
+body.cloudy svg { color: #bdc3c7; }
+
+#weatherIcon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+}
+
+#weatherIcon svg {
+    width: 120px;  /* Větší velikost ikony */
+    height: 120px;
+    stroke-width: 1.5;  /* Tenčí okraje pro elegantnější vzhled */
+}
+
+/* Barevné schéma podle počasí */
+body.sunny {
+    background: linear-gradient(135deg, #f39c12 0%, #d35400 100%);
+}
+
+body.sunny svg { color: #f1c40f; }
+
+body.rainy {
+    background: linear-gradient(135deg, #34495e 0%, #2980b9 100%);
+}
+
+body.rainy svg { color: #3498db; }
+
+body.snowy {
+    background: linear-gradient(135deg, #bdc3c7 0%, #7f8c8d 100%);
+    color: #2c3e50;
+}
+
+body.snowy svg { color: #95a5a6; }
+
+body.cloudy {
+    background: linear-gradient(135deg, #6c7a89 0%, #4b6584 100%);
+}
+
+body.cloudy svg { color: #a5b1c2; }
+
+h1 {
+    margin-bottom: 30px;
+    font-size: 2.5rem;
+    font-weight: 300;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #ecf0f1;
+}
+
+.search {
+    display: flex;
+    margin-bottom: 30px;
+}
+
+#city {
+    flex-grow: 1;
+    padding: 12px 20px;
+    border: 2px solid rgba(241, 234, 234, 0.2);
+    border-radius: 25px 0 0 25px;
+    background: rgba(255, 255, 255, 0.466);
+    color: #ecf0f1;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+#city:focus {
+    outline: none;
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+#searchBtn {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 0 25px 25px 0;
+    background: #764ba2;
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+#searchBtn:hover {
+    background: #667eea;
+}
+
+#weatherResult {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    padding: 25px;
+    margin-bottom: 30px;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+#cityName {
+    font-size: 2rem;
+    font-weight: 300;
+    margin-bottom: 20px;
+    color: #ecf0f1;
+}
+
+#temperature, #description, #humidity, #windSpeed {
+    margin: 10px 0;
+    opacity: 0.9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+svg {
+    margin-right: 10px;
+    stroke: currentColor;
+}
+
+#history {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    padding: 20px;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+#historyList {
+    list-style-type: none;
+}
+
+#historyList li {
+    background: rgba(255, 255, 255, 0.1);
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#historyList li:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.02);
+}
+
+/* Responzivní design */
+@media (max-width: 600px) {
+    .container {
+        width: 95%;
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    #weatherIcon svg {
+        width: 80px;
+        height: 80px;
+    }
+}
